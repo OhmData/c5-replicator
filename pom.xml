@@ -31,7 +31,6 @@
     </parent>
 
     <modules>
-        <module>c5-general-replication</module>
         <module>c5-replicator</module>
         <module>c5-replicator-api</module>
         <module>c5-replicator-log</module>
@@ -94,7 +93,7 @@
         <repository>
             <id>internal.repo</id>
             <name>Temporary Staging Repository</name>
-            <url>file://${project.build.directory}/mvn-repo</url>
+            <url>file://${project.build.directory}/mvn-repo-olog-java7</url>
         </repository>
     </distributionManagement>
 
@@ -105,8 +104,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler-plugin.version}</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>1.7</source>
+                    <target>1.7</target>
                     <compilerArgument>-Xlint:-options</compilerArgument>
                 </configuration>
             </plugin>
@@ -145,7 +144,7 @@
                     <message>Maven artifacts for ${project.version}</message>  <!-- git commit message -->
                     <noJekyll>true</noJekyll>                                  <!-- disable webpage processing -->
                     <outputDirectory>${distribution-management-repo-url}</outputDirectory> <!-- matches distribution management repository url above -->
-                    <branch>refs/heads/mvn-repo</branch>
+                    <branch>refs/heads/mvn-repo-olog-java7</branch>
                     <excludes>
                         <exclude>**/*jar-with-dependencies.*</exclude>
                         <exclude>**/*cat-olog*.*</exclude>
